@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,11 +14,13 @@ import orders.appup_kw.gamenews.R
 import orders.appup_kw.gamenews.databinding.FragmentMainBinding
 import orders.appup_kw.gamenews.model.News
 import orders.appup_kw.gamenews.ui.adapters.NewsRecyclerViewAdapter
+import orders.appup_kw.gamenews.viewModels.MainViewModel
 
 class MainFragment : Fragment() {
 
 
     lateinit var binding: FragmentMainBinding
+    lateinit var viewModel: MainViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,7 +28,7 @@ class MainFragment : Fragment() {
     ): View {
 
         binding = FragmentMainBinding.inflate(inflater, container, false)
-
+        viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
 
         return binding.root

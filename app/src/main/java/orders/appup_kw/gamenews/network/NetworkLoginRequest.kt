@@ -1,4 +1,4 @@
-package orders.appup_kw.newsfeed20.network
+package orders.appup_kw.gamenews.network
 
 import com.google.gson.GsonBuilder
 import okhttp3.Credentials

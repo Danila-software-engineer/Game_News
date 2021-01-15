@@ -1,4 +1,4 @@
-package orders.appup_kw.newsfeed20.network
+package orders.appup_kw.gamenews.network
 
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
