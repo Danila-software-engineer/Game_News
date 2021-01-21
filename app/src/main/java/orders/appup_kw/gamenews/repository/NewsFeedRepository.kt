@@ -26,6 +26,7 @@ import orders.appup_kw.gamenews.di.network.AuthInterceptor
 import orders.appup_kw.gamenews.di.network.WithoutAuthInterceptor
 import orders.appup_kw.gamenews.network.MainNetwork
 import orders.appup_kw.gamenews.network.POJONews
+import retrofit2.http.Path
 import java.io.InputStream
 import javax.inject.Inject
 
@@ -40,20 +41,8 @@ class NewsFeedRepository @Inject constructor(
     @WithoutAuthInterceptor private var mainWithoutAuthNetwork: MainNetwork,
     @AuthInterceptor private var mainAuthNetwork: MainNetwork
 ) {
+    suspend fun getNews(id1: Int?, id2: Int?) = mainWithoutAuthNetwork.getNewsID(id1,id2)
 
-    //fun getSearchResultStream(): Flow<PagingData<POJONews>> {
-    //    return Pager(
-    //            config = PagingConfig(
-    //                    pageSize = NETWORK_PAGE_SIZE,
-    //                    enablePlaceholders = false
-    //            ),
-    //            pagingSourceFactory = {NewsFeedPagingSource(mainWithoutAuthNetwork)}
-    //    ).flow
-    //}
-
-    companion object {
-        private const val NETWORK_PAGE_SIZE = 10
-    }
 
     suspend fun createNews(inputStream: InputStream, post: String) :Int{
 

@@ -7,4 +7,6 @@ data class News(
         val data: String,
         val likes: Int,
         val img: String
-)
+){
+
+}
